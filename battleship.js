@@ -119,13 +119,13 @@ function parseGuess(guess) {
   if (guess === null || guess.length !== 2) {
     alert("Oops, pleaser enter a letter and a number on the board.")
   } else {
-    firstChar = guess.charAt(0);
-    var row = alphabet.indexOf(firstChar);
-    var column = guess.charAt(1);
+    firstChar = guess.charAt(0);//获取
+    var row = alphabet.indexOf(firstChar);//转换查找
+    var column = guess.charAt(1);//获取第1位
 
-    if (isNaN(row) || isNaN(column)) {
+    if (isNaN(row) || isNaN(column)) {//判断第0 1位 
       alert("Oops, that isn't on the board.");
-    } else if (row < 0 || row >= model.boardSize || column >= model.boardSize) {
+    } else if (row < 0 || row >= model.boardSize || column >= model.boardSize || column < 0) {// ＜0 ≥7 ＞7
       alert("Oops, that off on the board!");
     } else {
       return row + column;
